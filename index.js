@@ -14,13 +14,13 @@ const server = http.createServer(app);
 
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     // credentials: true,
-//     origin: '*',
-//     optionSuccessStatus: 200,
-//   })
-// );
+app.use(
+  cors({
+    // credentials: true,
+    origin: '*',
+    optionSuccessStatus: 200,
+  })
+);
 app.use("/api", router);
 app.use(errorMiddleware);
 
